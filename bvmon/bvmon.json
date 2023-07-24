@@ -1,0 +1,19 @@
+{
+    "banners":{
+        "b1": "./images/slider/slider1.png",
+        "b2": "./images/slider/slider2.png",
+        "b3": "./images/slider/slider1.png"
+    },
+    "Features": [
+        {"N":"Designed Sofa", "image":"./images/features/f1.jpg", "price":"200"},
+        {"N":"Designed Sofa", "image":"./images/features/f2.jpg", "price":"200"},
+        {"N":"Designed Sofa", "image":"./images/features/f3.jpg", "price":"200"},
+        {"N":"Designed Sofa", "image":"./images/features/f4.jpg", "price":"200"}
+    ],
+    "LatestBlogs":[
+        {"N":"dfadfa", "description":"dfadfadfas", "image":"./images/features/f1.jpg"},
+        {"N":"dfadfa", "description":"dfadfadfas", "image":"./images/features/f1.jpg"},
+        {"N":"dfadfa", "description":"dfadfadfas", "image":"./images/features/f1.jpg"},
+        {"N":"dfadfa", "description":"dfadfadfas", "image":"./images/features/f1.jpg"}
+    ]
+}

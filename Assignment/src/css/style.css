@@ -1,0 +1,48 @@
+.hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(-10%);
+    transition: all 1s;
+}
+.show{
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+    transition: all 1s;
+}
+.hiddenR{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(100%);
+    transition: all 1s;
+}
+.showR{
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+    transition: all 1s;
+}
+.hiddenL{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+.showL{
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+    transition: all 1s;
+}
+.introduction:nth-child(2){
+    transition-delay: 250ms;
+}
+.Box:nth-child(2){
+    transition-delay: 250ms;
+}
+.Box:nth-child(3){
+    transition-delay: 400ms;
+}
+
+/* custom button */
+

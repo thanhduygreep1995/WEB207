@@ -1,0 +1,853 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 5 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> -->
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" href="./css/w3school.css">
+  
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> -->
+  <link rel="stylesheet" href="./css/animate.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.compat.css"/> -->
+  <link rel="stylesheet" href="./css/animate.compat.css">
+  <script src="./js/w3school.js"></script>
+  <link rel="stylesheet" href="./css/style.css"> 
+  <script defer src="./js/app.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+  <!-- <script src="./js/angular.min.js"></script>
+  <script src="./js/angular-route.js"></script>
+  <script src="./js/angular-animate.js"></script> -->
+  <link rel="stylesheet" href="./css/buttonstyle.css">
+  <style>
+
+    body {
+      padding: 0;
+      margin: 0 auto;
+    }
+    .card-img-overlay .card-title a{
+      text-decoration: none;
+      color: rgb(246, 246, 246);
+    }
+    .card-img-overlay .card-title a:hover{
+      font-size: m medium ;
+      color: #FF5F17;
+    }
+
+    .card-img-overlay .card-text a{
+      text-decoration: none;
+      color: rgb(246, 246, 246);
+    }
+    .card-img-overlay .card-text a:hover{
+      font-size: medium ;
+      color: #FF5F17;
+    }
+    .content-footer a{
+      text-decoration: none;
+      color: white;
+    }
+    .content-footer a:hover{
+      font-size: medium ;
+      color: #FF5F17;
+    }
+    .content {
+      width: 100%;
+      height: 40px;
+      box-shadow: 2px 4px 10px rgba(0, 0, 0, .2);
+      border-radius: 60px;
+      overflow: hidden;
+    }
+
+    .subscription {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .subscription .add-email{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+      padding: 0 20px;
+    }
+
+    .subscription .submit-email {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: calc(100% - 2px);
+      width: 100px;
+      border: none;
+      border-radius: 60px;
+      outline: none;
+      margin: 1px;
+      padding: 0 20px;
+      cursor: pointer;
+      background: #808080;
+      color: #FFFFFF;
+      transition: width 0.35s ease-in-out,
+        background 0.35s ease-in-out;
+    }
+
+    .subscription.done .submit-email {
+      width: calc(100% - 2px);
+      background: #FF5F17;
+    }
+
+    .subscription .submit-email .before-submit,
+    .subscription .submit-email .after-submit {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      line-height: 38px;
+      transition: visibility .35s ease-in-out,
+        opacity .35s ease-in-out;
+    }
+
+    .subscription.done .submit-email .before-submit,
+    .subscription:not(.done) .submit-email .after-submit {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .subscription .submit-email .after-submit {
+      transition-delay: 0.35s;
+    }
+
+    .subscription:not(.done) .submit-email .before-submit,
+    .subscription.done .submit-email .after-submit {
+      visibility: visible;
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body ng-app ="myApp"  >
+
+  <article >
+    <main >
+      <section class="">
+        
+          <!-- <div class="row" > -->
+            <!-- <div class="p-5 text-black text-center">DEMO</div> -->
+            <!-- <div class="container-fluid"> -->
+            <!-- Carousel -->
+              <div id="wordSlide" class="carousel slide" data-bs-ride="carousel" ng-module="Rights" >
+                <!-- The slideshow/carousel -->
+                <!-- <div class="alert alert-secondary"> -->
+                  <!-- Left and right controls/icons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#wordSlide" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#wordSlide" data-bs-slide="next"  >
+                  <span class="carousel-control-next-icon"></span>
+                </button>
+                  <!-- text-bg-secondary -->
+                <div class="carousel-inner bg-secondary bg-opacity-50 " ng-controller = "myCtrl">
+                  <div class="carousel-item active">
+                    <div class="p-3 text-white text-center">{{Rights.R1}}</div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="p-3 text-white text-center">{{Rights.R2}}</div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="p-3 text-white text-center">{{Rights.R3}}</div>
+                  </div>
+                </div>
+                <!-- </div> -->
+                  
+                
+            </div>
+            <!-- </div> -->
+          <!-- </div> -->
+      
+          <!-- <div class="row">
+            <div class="container-fluid" > -->
+              <!-- Carousel -->
+              <div id="demo" class="carousel slide carousel-fade" data-bs-ride="carousel" ng-controller="myCtrl" ng-module="banners">
+        
+                <!-- Indicators/dots -->
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                  <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                  <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                </div>
+              
+                <!-- The slideshow/carousel -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img ng-src="{{banners.b1}}" alt="Los Angeles" class="d-block w-100" style="height: 850px;">
+                  </div>
+                  <div class="carousel-item">
+                    <img ng-src="{{banners.b2}}" alt="Chicago" class="d-block w-100" style="height: 850px;">
+                  </div>
+                  <div class="carousel-item">
+                    <img ng-src="{{banners.b3}}" alt="New York" class="d-block w-100" style="height: 850px;">
+                  </div>
+                </div>
+              
+                <!-- Left and right controls/icons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </button>
+              </div>
+            <!-- </div>
+          </div> -->
+        
+      </section>
+      <section >
+        <!-- About Section -->
+        <div class="container" style="padding:128px 16px" id="about" ng-controller="myCtrl">
+          <h3 class="w3-center"><b>Key features of our company</b></h3>
+          <!-- <p class="w3-center w3-large"></p> -->
+          <div class="w3-row w3-center" style="margin-top:64px">
+            <div class="w3-quarter">
+              <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+              <p class="w3-large">Responsive</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            </div>
+            <div class="w3-quarter ">
+              <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+              <p class="w3-large">Passion</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            </div>
+            <div class="w3-quarter ">
+              <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+              <p class="w3-large">Design</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            </div>
+            <div class="w3-quarter ">
+              <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+              <p class="w3-large">Support</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            </div>
+          </div>
+        </div>
+
+        
+
+      </section>
+      <section class=" d-flex flex-wrap justify-content-center">
+        <!-- Promo Section - "We know design" -->
+        <div class="container " ng-module="about"  ng-controller="myCtrl">
+          <div class="row w3-light-grey ">
+            <div class="col-md-6  introduction">
+              <h3>{{about.title}}</h3>
+              <p>{{about.description}}</p>
+              <p><a href="#work" class="btn btn-custom btn-custom-orange"><i class="fa fa-th"> </i> View Our Works</a></p>
+            </div>
+            <div class="col-md-6 introduction">
+              <img class="w3-image w3-round-large" ng-src="{{about.imageSRC}}" alt="Buildings" width="700" height="394">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="">
+        <div class="container mt-5 mb-5">
+          <div class="row">
+            <!-- <div class="col-sm-6"> -->
+              
+              <div class="mt-2 col-md-9" ng-controller="myCtrl">
+                <div class="py-1" style="background-color: #808080; color: #FFFFFF;"><h3 class="ms-1" ><b>BestSeller</b></h3></div>
+                <div id="best-seller"  class="carousel slide " style="background-color: #FFFFFF;" data-bs-ride="carousel" >
+                  
+                  <!-- The slideshow/carousel -->
+                  <!-- <div class="alert alert-secondary"> -->
+                    <!-- Left and right controls/icons -->
+                  
+                    <!-- text-bg-secondary -->
+                  <div class="carousel-inner bg-secondary bg-opacity-50 " style="background-color: #FFFFFF;" >
+                    
+                    <div class="carousel-item active" style="background-color: #FFFFFF;" >
+                      
+                      <div class="d-flex flex-wrap justify-content-around">
+                          
+                      <!-- <div class="row"> -->
+                        <div class="card px-2 col-md-4 mt-2" ng-repeat="bs in Bestsellers.BS1" style="width: 290px; height: 489.56px;" >
+                          <img ng-src="{{bs.imageSRC}}" class="card-img-top mt-2" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">{{bs.title}}</h5>
+                            <p class="card-text">{{bs.description}}</p>
+                            
+                          </div>
+                          <div class="d-flex flex-wrap align-content-center justify-content-between"> 
+                            <a href="#" class="btn btn-custom btn-custom-orange col-md-4 rounded d-flex justify-content-center flex-column align-items-center px-4 py-2 mb-2" style="width: 65%;">Purchase</a>
+                            <h3><span class="badge bg-dark">$7</span></h3>
+                          </div>
+                        </div>
+                        
+
+                        
+                      </div>
+                    </div>
+                    <div class="carousel-item" style="background-color: #FFFFFF;" >
+                      
+                      <div class="d-flex flex-wrap justify-content-around">
+                          
+                      
+                        <div class="card px-2 col-md-4 mt-2" ng-repeat="bs in Bestsellers.BS2"  style="width: 290px; height: 489.56px;" >
+                          <img ng-src="{{bs.imageSRC}}" class="card-img-top mt-2" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">{{bs.title}}</h5>
+                            <p class="card-text">{{bs.description}}</p>
+                            
+                          </div>
+                          <div class="d-flex flex-wrap align-content-center justify-content-between"> 
+                            <a href="#" class="btn btn-custom btn-custom-orange col-md-4 rounded d-flex justify-content-center flex-column align-items-center px-4 py-2 mb-2" style="width: 65%;">Purchase</a>
+                            <h3><span class="badge bg-dark">$7</span></h3>
+                          </div>
+                        </div>
+                        
+                        
+                      </div>
+                    </div>
+                    <div class="carousel-item" style="background-color: #FFFFFF;" >
+                      
+                      <div class="d-flex flex-wrap justify-content-around">
+                          
+                        
+                          <div class="card px-2 col-md-4 mt-2" ng-repeat="bs in Bestsellers.BS3" style="width: 290px; height: 489.56px;" >
+                            <img ng-src="{{bs.imageSRC}}" class="card-img-top mt-2" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">{{bs.title}}</h5>
+                              <p class="card-text">{{bs.description}}</p>
+                              
+                            </div>
+                            <div class="d-flex flex-wrap align-content-center justify-content-around"> 
+                              <a href="#" class="btn btn-custom btn-custom-orange col-md-4 rounded d-flex justify-content-center flex-column align-items-center px-4 py-2 mb-2" style="width: 65%;">Purchase</a>
+                              <h3><span class="badge bg-dark">$7</span></h3>
+                            </div>
+                          </div>
+                                          
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="pagination">
+                    <button class="page-item border border-0" type="button" data-bs-target="#best-seller" data-bs-slide="prev" style="position: absolute;  left: 0px; top: 50%; background-color: unset;"><a class="page-link border border-0" style="background-color: unset;" href="#"><span class="carousel-control-prev-icon"></span></a></button>
+                    
+                    <button class="page-item border border-0" type="button" data-bs-target="#best-seller" data-bs-slide="next" style="position: absolute; right: 0px; top: 50%; background-color: unset;"><a class="page-link border border-0" style="background-color: unset;" href="#"><span class="carousel-control-next-icon"></span></a></button>
+                  </ul>
+                  <!-- </div> -->
+                    
+                  
+                </div>
+
+              </div>
+
+              <div class="mt-2 col-md-3">
+                <div class="py-1"><h3 class="text-center"><b>For You</b></h3></div>
+                <div id="forYou" ng-controller="myCtrl"  class="carousel slide carousel-fade" style="background-color: #FFFFFF;" data-bs-ride="carousel" >
+                  
+                  <!-- The slideshow/carousel -->
+                  <!-- <div class="alert alert-secondary"> -->
+                    <!-- Left and right controls/icons -->
+                  
+                    <!-- text-bg-secondary -->
+                  <div class="carousel-inner bg-secondary bg-opacity-50" ng-module="forYou" style="background-color: #FFFFFF;" >
+                    
+                    <div class="carousel-item active" style="background-color: #FFFFFF;" >
+                      
+                      <div class="d-flex flex-wrap justify-content-around">
+                          
+                      <!-- <div class="row"> -->
+                        <div class="card px-2 col-md-4 mt-2" style="width: 290px; height: 489.56px;" >
+                          <img ng-src="{{forYou.FU1.imageSRC}}" class="card-img-top mt-2" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">{{forYou.FU1.title}}</h5>
+                            <p class="card-text">{{forYou.FU1.description}}</p>
+                            
+                          </div>
+                          <div class="d-flex flex-wrap align-content-center justify-content-between"> 
+                            <a href="#" class="btn btn-custom btn-custom-orange col-md-4 rounded d-flex justify-content-center flex-column align-items-center px-4 py-2 mb-2" style="width: 65%;">Purchase</a>
+                            <h3><span class="badge bg-dark">$7</span></h3>
+                          </div>
+                        </div>
+                        
+                        
+                      </div>
+                    </div>
+
+                    <div class="carousel-item" style="background-color: #FFFFFF;" >
+                      
+                      <div class="d-flex flex-wrap justify-content-end">
+                          
+                      <!-- <div class="row"> -->
+                        <div class="card px-2 col-md-4 mt-2" style="width: 290px; height: 489.56px;" >
+                          <img ng-src="{{forYou.FU2.imageSRC}}" class="card-img-top mt-2" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">{{forYou.FU2.title}}</h5>
+                            <p class="card-text">{{forYou.FU2.description}}</p>
+                            
+                          </div>
+                          <div class="d-flex flex-wrap align-content-center justify-content-between"> 
+                            <a href="#" class="btn btn-custom btn-custom-orange col-md-4 rounded d-flex justify-content-center flex-column align-items-center px-4 py-2 mb-2" style="width: 65%;">Purchase</a>
+                            <h3><span class="badge bg-dark">$7</span></h3>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                    
+                    <div class="carousel-item" style="background-color: #FFFFFF;" >
+                      
+                      <div class="d-flex flex-wrap justify-content-end">
+                          
+                        <!-- <div class="row"> -->
+                          <div class="card px-2 col-md-4 mt-2" style="width: 290px; height: 489.56px;" >
+                            <img ng-src="{{forYou.FU3.imageSRC}}" class="card-img-top mt-2" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">{{forYou.FU3.title}}</h5>
+                              <p class="card-text">{{forYou.FU3.description}}</p>
+                              
+                            </div>
+                            <div class="d-flex flex-wrap align-content-center justify-content-between"> 
+                              <a href="#" class="btn btn-custom btn-custom-orange col-md-4 rounded d-flex justify-content-center flex-column align-items-center px-4 py-2 mb-2" style="width: 65%;">Purchase</a>
+                              <h3><span class="badge bg-dark">$7</span></h3>
+                            </div>
+                          </div>
+                                      
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="pagination">
+                    <button class="page-item border border-0 ms-3 d-flex justify-content-between" type="button" data-bs-target="#forYou" data-bs-slide="prev" style="z-index: 5; position: absolute;  left: 0px; top: 50%; background-color: unset;"><a class="page-link border border-0" style="background-color: unset;" href="#"><span class="carousel-control-prev-icon"></span></a></button>
+                    
+                    <button class="page-item border border-0 d-flex justify-content-between" type="button" data-bs-target="#forYou" data-bs-slide="next" style="z-index: 5; position: absolute; right: 0px; top: 50%; background-color: unset;"><a class="page-link border border-0" style="background-color: unset;" href="#"><span class="carousel-control-next-icon"></span></a></button>
+                  </ul>
+                  <!-- </div> -->
+                    <!-- <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </button>
+                  -->
+                </div>
+
+              </div>
+            <!-- </div> -->       
+          </div>
+        
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+      <section class="" ng-controller="myCtrl">
+        <div class="container mb-5">
+          <div class="row">
+            <div class="mt-2 animate-repeat" ng-app ="myApp"  >
+              <div class="row d-flex  justify-content-start border mb-2" ng-init="tab = 1">
+                <button  ng-class="{active:tab===1}" ng-click="tab = 1" autofocus class="btn btn-custom btn-custom-orange col-md-4 d-flex justify-content-center flex-column align-items-center" style=" display: block;width: 15%;">
+                  <span class="fa-solid fa-shoe-prints"></span>Giày Cổ Cao
+                </button>
+  
+                <button ng-class="{active:tab===2}" ng-click="tab = 2" class="btn btn-custom btn-custom-orange col-md-4 d-flex justify-content-center flex-column align-items-center " style=" width: 15%;">
+                  <i class="fa-sharp fa-solid fa-shoe-prints"></i>Giày Cổ Thấp
+                </button>
+  
+                <button ng-class="{active:tab===3}" ng-click="tab = 3" class="btn btn-custom btn-custom-orange col-md-4 d-flex justify-content-center flex-column align-items-center" style=" width: 15%;">
+                  <i class="fa-sharp fa-solid fa-shoe-prints"></i>Giày Đế Bẹt
+                </button>
+              </div>
+              <div class="row pb-3">
+                <div ng-show="tab === 1" class="d-flex flex-wrap justify-content-around">
+                          
+                  <!-- <div class="row"> -->
+                    <div ng-repeat="x in KS1" class="card p-2 col-md-3 mt-2" style="width: 290px; height: 489.56px;" >
+                      <!-- ng-repeat ='x in giayCoCao' -->
+                      <img ng-src="{{x.imageSRC}}" class="card-img-top mt-2" alt="...">
+                      <!-- ./Image/ananasf/ananas15.jpg -->
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          <!-- Giày Xanh Cá Tính -->
+                          {{x.title}}
+                        </h5>
+                        <p class="card-text">
+                          <!-- Giày Vải Canvas NE Phù Hợp cho mọi đối tượng -->
+                          {{x.description}}
+                        </p>
+                        
+                      </div>
+                      <div class="d-flex flex-wrap align-content-center justify-content-between"> 
+                        <button href="" type="submit" ng-click="addToCart(x)" class="btn btn-custom btn-custom-orange rounded d-flex  align-items-center justify-content-center px-4 py-2 mb-2" style="width: 65%;">Purchase</button>
+                        <h3><span class="badge bg-dark">${{x.price}}</span></h3>
+                      </div>
+                    </div>
+                    
+                </div>
+                <div ng-show="tab === 2" class="d-flex flex-wrap justify-content-around"  >
+                          
+                  <!-- <div class="row"> -->
+                    <div ng-repeat="x in KS2 " class="card p-2 col-md-3 mt-2" style="width: 290px; height: 489.56px;" >
+                      <!-- ng-repeat ='x in giayCoCao' -->
+                      <img ng-src="{{x.imageSRC}}" class="card-img-top mt-2" alt="...">
+                      <!-- ./Image/ananasf/ananas15.jpg -->
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          <!-- Giày Xanh Cá Tính -->
+                          {{x.title}}
+                        </h5>
+                        <p class="card-text">
+                          <!-- Giày Vải Canvas NE Phù Hợp cho mọi đối tượng -->
+                          {{x.description}}
+                        </p>
+                        
+                      </div>
+                      <div class="d-flex flex-wrap align-content-center justify-content-between"> 
+                        <button href="" type="submit" ng-click="addToCart(x)" class="btn btn-custom btn-custom-orange rounded d-flex  align-items-center justify-content-center px-4 py-2 mb-2" style="width: 65%;">Purchase</button>
+                        <h3><span class="badge bg-dark">${{x.price}}</span></h3>
+                      </div>
+                    </div>
+                    
+                    
+                </div>
+                <div ng-show="tab === 3" class="d-flex flex-wrap justify-content-around" >
+                          
+                  
+                    <div ng-repeat="x in KS3" class="card p-2 col-md-3 mt-2" style="width: 290px; height: 489.56px;" >
+         
+                      <img ng-src="{{x.imageSRC}}" class="card-img-top mt-2" alt="...">
+  
+                      <div class="card-body">
+                        <h5 class="card-title">
+                
+                          {{x.title}}
+                        </h5>
+                        <p class="card-text">
+                  
+                          {{x.description}}
+                        </p>
+                        <span ng-show="x.id"></span>
+                      </div>
+                      <div class="d-flex flex-wrap align-content-center justify-content-between"> 
+                        <button type="submit" href="" ng-click="addToCart(x)" class="btn btn-custom btn-custom-orange rounded d-flex  align-items-center justify-content-center px-4 py-2 mb-2" style="width: 65%;">Purchase</button>
+                        <h3><span class="badge bg-dark" >${{x.price}}</span></h3>
+                      </div>
+                    </div>
+                          
+                </div>
+            
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div id="banner2" class="carousel slide" data-bs-ride="carousel" ng-controller="myCtrl" ng-module="banners">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#banner2" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#banner2" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#banner2" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img ng-src="{{banners.b1}}" alt="Los Angeles" class="d-block" style="width:100%; height: 850px;">
+              <div class="carousel-caption">
+
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{{banners.b2}}" alt="Chicago" class="d-block" style="width:100%; height: 850px;">
+              <div class="carousel-caption">
+
+              </div> 
+            </div>
+            <div class="carousel-item">
+              <img ng-src="{{banners.b3}}" alt="New York" class="d-block" style="width:100%; height: 850px;">
+              <div class="carousel-caption">
+
+              </div>  
+            </div>
+          </div>
+          
+          <!-- Left and right controls/icons -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#banner2" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#banner2" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+        
+      </section>
+
+
+      <section>
+        <div class="container mt-5 ">
+          <h3 class="text-center "><b>Danh Mục Mua Hàng</b></h3>
+          <div class="row text-center d-flex flex-wrap justify-content-around">
+            
+    
+            <div class="card m-2 p-1 col-md-4 Box  " style="width: 25rem;">
+                
+                <img src="./Image/ananasf/ananas26.jpg" class="card-img"    ;alt="...">
+                
+                <div class="card-img-overlay text-bg-dark  bg-opacity-50">
+                  
+                        <br><h5 class="card-title"><a href="">Giày Nam</a></h5><br>
+                        <p class="card-text"><a href="">New Arrivals</a></p>
+                        <p class="card-text"><a href="">Best Seller</a></p>
+                        <p class="card-text"><a href="">Sale-Off</a></p>
+                  
+                    
+                </div>
+                
+            </div>
+    
+            <div class="card  m-2 p-1 col-md-4 Box " style="width: 25rem;">
+                <img src="./Image/ananasf/ananas27.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay text-bg-dark  bg-opacity-50">
+                    <br><h5 class="card-title"><a href=""> Giày Nữ</a></h5><br>
+                    <p class="card-text"><a href="">New Arrivals</a></p>
+                    <p class="card-text"><a href="">Best Seller</a></p>
+                    <p class="card-text"><a href="">Sale-Off</a></p>
+                </div>
+            </div>
+    
+            <div class="card m-2 p-1 col-md-4 Box " style="width: 25rem;">
+                <img src="./Image/ananasf/ananas28.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay text-bg-dark  bg-opacity-50">
+                    <br><h5 class="card-title"><a href="">Dòng Sản Phẩm</a></h5><br>
+                    <p class="card-text"><a href="">Basas</a></p>
+                    <p class="card-text"><a href="">Vintas</a></p>
+                    <p class="card-text"><a href="">Urbas</a></p>
+                    <p class="card-text"><a href="">Pattas</a></p>
+                </div>
+            </div>
+    
+          </div>
+        </div>
+      </section>
+      
+      <section >
+        <div class="container mt-5 mb-5">   
+          <div class="row ">
+            <div class="col-md-6 mt-3 " ng-controller="myCtrl" ng-module ="hotNews">
+              <h3 class="text-center"><b>Tiêu Điểm Tin</b></h3>
+              
+              <div id="demo1" class="carousel slide d-flex justify-content-start " data-bs-ride="carousel" >
+                <!-- Indicators/dots -->
+                <div class="carousel-indicators" style="position: absolute; bottom: 40%;">
+                    <button type="button" data-bs-target="#demo1" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#demo1" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#demo1" data-bs-slide-to="2"></button>
+                </div>
+                <!-- The slideshow/carousel -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="card mt-2" style="height: 565px;" >
+                        <img ng-src="{{hotNews.HN1.imageSRC}}" style="height: 330px;" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">{{hotNews.HN1.title}}</h5>
+                          <p class="card-text">{{hotNews.HN1.description}}</p>
+                          
+                        </div>
+                        <div class="d-flex justify-content-center">
+                          <a href="#" class="btn btn-custom btn-custom-orange rounded d-flex align-items-center justify-content-center mb-3 w-50 ">Go somewhere</a>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="card mt-2" style="height: 565px;">
+                        <img ng-src="{{hotNews.HN2.imageSRC}}" style="height: 330px;" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">{{hotNews.HN2.title}}</h5>
+                          <p class="card-text">{{hotNews.HN2.description}}</p>
+                          
+                        </div>
+                        <div class="d-flex justify-content-center">
+                          <a href="#" class="btn btn-custom btn-custom-orange d-flex  align-items-center justify-content-center rounded mb-3 w-50 " >Go somewhere</a>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item" >
+                    <div class="card mt-2" style="height: 565px;">
+                        <img ng-src="{{hotNews.HN3.imageSRC}}" style="height: 330px;"class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">{{hotNews.HN3.title}}</h5>
+                          <p class="card-text">{{hotNews.HN1.description}}</p>
+                          
+                        </div>
+                        <div class="d-flex justify-content-center">
+                          <a href="#" class="btn btn-custom btn-custom-orange rounded d-flex  align-items-center justify-content-center mb-3 w-50 ">Go somewhere</a>
+                        </div>
+
+                        
+                      </div>
+                  </div>
+                </div>
+                
+                <!-- Left and right controls/icons -->
+                <!-- <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </button> -->
+              </div>
+    
+            
+            
+            </div>
+            
+            <div class="col-md-6 mt-3 "  >
+              <h3 class="text-center"><b>Hướng Dẫn</b></h3>
+
+              <div class=" d-flex flex-wrap" ng-module="tips" ng-controller="myCtrl">
+                <div class="card mt-2 mb-2"  >   
+                    <div class="row ">
+                      <div class="col-md-4">
+                        <img ng-src="{{tips.T1.imageSRC}}" class="img-fluid rounded-start h-100"  alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">{{tips.T1.title}}</h5>
+                          <p class="card-text">{{tips.T1.description}}</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="card mt-2 mb-2"  >   
+                  <div class="row ">
+                    <div class="col-md-4">
+                      <img ng-src="{{tips.T2.imageSRC}}" class="img-fluid rounded-start h-100"  alt="...">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">{{tips.T2.title}}</h5>
+                        <p class="card-text">{{tips.T2.description}}</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="card mt-2 mb-2"  >   
+                  <div class="row ">
+                    <div class="col-md-4">
+                      <img ng-src="{{tips.T3.imageSRC}}" class="img-fluid rounded-start h-100"  alt="...">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">{{tips.T3.title}}</h5>
+                        <p class="card-text">{{tips.T2.description}}</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            
+    
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container mt-3 mb-5 ">
+          <div class="row"  >
+            <div class="mb-5 col-md-4 mt-2 object-fit-cover" ng-controller="myCtrl" ng-module="instagram" >
+              <h3 class="ms-2"><b>Instagam</b></h3>
+              <!-- <div class="card m-1 "  > -->
+              <div class="w3-content" style="max-width:1200px;">
+                <img class="mySlides" ng-src="{{instagram.img1}}" style="width:100%;display:none; height: 415.5px;">
+                <img class="mySlides" ng-src="{{instagram.img2}}" style="width:100% ; height: 415.5px;">
+                <img class="mySlides" ng-src="{{instagram.img3}}" style="width:100%;display:none ; height: 415.5px;">
+              
+                <div class="row mt-3" ><!-- w3-row-padding w3-section -->
+                  <div class="col-md-4"><!-- w3-col s4 -->
+                    <img class="demo w3-opacity w3-hover-opacity-off" ng-src="{{instagram.img1}}" style="width:100%;cursor:pointer; height: 123.48px;" onclick="currentDiv(1)">
+                  </div>
+                  <div class="col-md-4">
+                    <img class="demo w3-opacity w3-hover-opacity-off" ng-src="{{instagram.img2}}" style="width:100%;cursor:pointer; height: 123.48px;" onclick="currentDiv(2)">
+                  </div>
+                  <div class="col-md-4">
+                    <img class="demo w3-opacity w3-hover-opacity-off" ng-src="{{instagram.img3}}" style="width:100%;cursor:pointer; height: 123.48px;" onclick="currentDiv(3)">
+                  </div>
+                </div>
+              </div>
+              
+              <!-- </div> -->
+            </div>
+
+            <div class="mb-5 col-md-8 mt-2 ">
+              <div class="" ng-module= "discount" ng-controller="myCtrl">
+                <h3 class="ms-2"><b>Chương Trình Khuyến Mãi</b></h3>
+                <img ng-src="{{discount.imageSRC}}" class="w-100 object-fit-cover border rounded" style="height: 555.92px; "   alt="">
+              </div>
+            
+              
+            </div>
+          </div>
+        </div>
+        
+        
+      </section>
+    </main>
+  </article>
+  
+
+</body>
+</html>
+<script>
+  document.querySelector('.submit-email').addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    document.querySelector('.subscription').classList.add('done');
+  });
+</script>
+<script>
+  function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-opacity-off";
+}
+</script>
+
+<script src="./js/cart.js"></script>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en"  ng-app="myApp">
+<head>
+  <title>Bootstrap 5 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="./css/bootstrap.min.css"> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> -->
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" href="./css/w3school.css">
+  
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> -->
+  <link rel="stylesheet" href="./css/animate.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.compat.css"/> -->
+  <link rel="stylesheet" href="./css/animate.compat.css">
+  <script src="./js/w3school.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+  <link rel="stylesheet" href="./css/cart.css">
+  <link rel="stylesheet" href="./css/buttonstyle.css">
+  <style>
+
+    body {
+      padding: 0;
+      margin: 0 auto;
+    }
+    .card-img-overlay .card-title a{
+      text-decoration: none;
+      color: rgb(246, 246, 246);
+    }
+    .card-img-overlay .card-title a:hover{
+      font-size: m medium ;
+      color: #FF5F17;
+    }
+
+    .card-img-overlay .card-text a{
+      text-decoration: none;
+      color: rgb(246, 246, 246);
+    }
+    .card-img-overlay .card-text a:hover{
+      font-size: medium ;
+      color: #FF5F17;
+    }
+    .content-footer a{
+      text-decoration: none;
+      color: white;
+    }
+    .content-footer a:hover{
+      font-size: medium ;
+      color: #FF5F17;
+    }
+    .content {
+      width: 100%;
+      height: 40px;
+      box-shadow: 2px 4px 10px rgba(0, 0, 0, .2);
+      border-radius: 60px;
+      overflow: hidden;
+    }
+
+    .subscription {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .subscription .add-email{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+      padding: 0 20px;
+    }
+
+    .subscription .submit-email {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: calc(100% - 2px);
+      width: 100px;
+      border: none;
+      border-radius: 60px;
+      outline: none;
+      margin: 1px;
+      padding: 0 20px;
+      cursor: pointer;
+      background: #808080;
+      color: #FFFFFF;
+      transition: width 0.35s ease-in-out,
+        background 0.35s ease-in-out;
+    }
+
+    .subscription.done .submit-email {
+      width: calc(100% - 2px);
+      background: #FF5F17;
+    }
+
+    .subscription .submit-email .before-submit,
+    .subscription .submit-email .after-submit {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      line-height: 38px;
+      transition: visibility .35s ease-in-out,
+        opacity .35s ease-in-out;
+    }
+
+    .subscription.done .submit-email .before-submit,
+    .subscription:not(.done) .submit-email .after-submit {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .subscription .submit-email .after-submit {
+      transition-delay: 0.35s;
+    }
+
+    .subscription:not(.done) .submit-email .before-submit,
+    .subscription.done .submit-email .after-submit {
+      visibility: visible;
+      opacity: 1;
+    }
+
+  </style>
+  
+</head>
+<body >
+
+
+  
+  <article >
+    <section class="" ng-controller="myCtrl">
+      <div class="container mb-5">
+        <div class="row">
+          <div class="mt-2 animate-repeat" ng-app ="myApp"  >
+            <div class="row d-flex  justify-content-start border mb-2" ng-init="tab = 1">
+              <button  ng-class="{active:tab===1}" ng-click="tab = 1" autofocus class="btn btn-custom btn-custom-orange col-md-4 d-flex justify-content-center flex-column align-items-center" style=" display: block;width: 15%;">
+                <span class="fa-solid fa-shoe-prints"></span>Giày Cổ Cao
+              </button>
+
+              <button ng-class="{active:tab===2}" ng-click="tab = 2" class="btn btn-custom btn-custom-orange col-md-4 d-flex justify-content-center flex-column align-items-center " style=" width: 15%;">
+                <i class="fa-sharp fa-solid fa-shoe-prints"></i>Giày Cổ Thấp
+              </button>
+
+              <button ng-class="{active:tab===3}" ng-click="tab = 3" class="btn btn-custom btn-custom-orange col-md-4 d-flex justify-content-center flex-column align-items-center" style=" width: 15%;">
+                <i class="fa-sharp fa-solid fa-shoe-prints"></i>Giày Đế Bẹt
+              </button>
+            </div>
+            <div class="row pb-3">
+              <div ng-show="tab === 1" class="d-flex flex-wrap justify-content-around">
+                        
+                <!-- <div class="row"> -->
+                  <div ng-repeat="x in KS1" class="card p-2 col-md-3 mt-2" style="width: 290px; height: 489.56px;" >
+                    <!-- ng-repeat ='x in giayCoCao' -->
+                    <img ng-src="{{x.imageSRC}}" class="card-img-top mt-2" alt="...">
+                    <!-- ./Image/ananasf/ananas15.jpg -->
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        <!-- Giày Xanh Cá Tính -->
+                        {{x.title}}
+                      </h5>
+                      <p class="card-text">
+                        <!-- Giày Vải Canvas NE Phù Hợp cho mọi đối tượng -->
+                        {{x.description}}
+                      </p>
+                      
+                    </div>
+                    <div class="d-flex flex-wrap align-content-center justify-content-between"> 
+                      <button href="" type="submit" ng-click="addToCart(x)" class="btn btn-custom btn-custom-orange rounded d-flex  align-items-center justify-content-center px-4 py-2 mb-2" style="width: 65%;">Purchase</button>
+                      <h3><span class="badge bg-dark">${{x.price}}</span></h3>
+                    </div>
+                  </div>
+                  
+              </div>
+              <div ng-show="tab === 2" class="d-flex flex-wrap justify-content-around"  >
+                        
+                <!-- <div class="row"> -->
+                  <div ng-repeat="x in KS2 " class="card p-2 col-md-3 mt-2" style="width: 290px; height: 489.56px;" >
+                    <!-- ng-repeat ='x in giayCoCao' -->
+                    <img ng-src="{{x.imageSRC}}" class="card-img-top mt-2" alt="...">
+                    <!-- ./Image/ananasf/ananas15.jpg -->
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        <!-- Giày Xanh Cá Tính -->
+                        {{x.title}}
+                      </h5>
+                      <p class="card-text">
+                        <!-- Giày Vải Canvas NE Phù Hợp cho mọi đối tượng -->
+                        {{x.description}}
+                      </p>
+                      
+                    </div>
+                    <div class="d-flex flex-wrap align-content-center justify-content-between"> 
+                      <button href="" type="submit" ng-click="addToCart(x)" class="btn btn-custom btn-custom-orange rounded d-flex  align-items-center justify-content-center px-4 py-2 mb-2" style="width: 65%;">Purchase</button>
+                      <h3><span class="badge bg-dark">${{x.price}}</span></h3>
+                    </div>
+                  </div>
+                  
+                  
+              </div>
+              <div ng-show="tab === 3" class="d-flex flex-wrap justify-content-around" >
+                        
+                
+                  <div ng-repeat="x in KS3" class="card p-2 col-md-3 mt-2" style="width: 290px; height: 489.56px;" >
+       
+                    <img ng-src="{{x.imageSRC}}" class="card-img-top mt-2" alt="...">
+
+                    <div class="card-body">
+                      <h5 class="card-title">
+              
+                        {{x.title}}
+                      </h5>
+                      <p class="card-text">
+                
+                        {{x.description}}
+                      </p>
+                      <span ng-show="x.id"></span>
+                    </div>
+                    <div class="d-flex flex-wrap align-content-center justify-content-between"> 
+                      <button type="submit" href="" ng-click="addToCart(x)" class="btn btn-custom btn-custom-orange rounded d-flex  align-items-center justify-content-center px-4 py-2 mb-2" style="width: 65%;">Purchase</button>
+                      <h3><span class="badge bg-dark" >${{x.price}}</span></h3>
+                    </div>
+                  </div>
+                        
+              </div>
+          
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="mt-5 mb-5" >
+      <div class="container">
+        <div class="cart">
+          <!-- <div class="table-responsive"> -->
+            <table class="table">
+              <thead class="table-dark">
+                <tr>
+                  <th scope="col" class="text-white">Product</th>
+                  <th scope="col" class="text-white">Price</th>
+                  <th scope="col" class="text-white">Quantity</th>
+                  <th scope="col" class="text-white">Total</th>
+                </tr>
+              </thead>
+              <tbody >
+                <tr ng-repeat="item in cart" >
+                  <td>
+                    <!-- <div class="main"> -->
+                      <div class="d-flex " style="width: 10rem; height: 6rem;">
+                        <img ng-src="{{item.imageSRC}}"  alt="">
+                      </div>
+                      <div class="des">
+                        <p>{{item.title}}</p>
+                      </div>
+                    <!-- </div> -->
+                  </td>
+                  <td>
+                    <h6>{{item.price|currency}}</h6>
+                  </td>
+                  <td>
+                    <div class="counter d-flex align-content-center">
+                      <i ng-click="addToCart(item)" class="fas fa-angle-up btn border border-2"></i>
+                      <input class="input-number rounded-2 border border-2" value="{{item.qty}}" min="1" max="99999" type="text">
+                      <i ng-click="minusItem(item)" class="fas fa-angle-down btn border border-2"></i>
+                    </div>
+                  </td>
+                  <td class="d-flex justify-content-between">
+                    <h6>{{(item.qty*item.price) | currency}}</h6>
+                    <button class="btn btn-danger" ng-click="removeFromCart(item);">Remove Item</button>
+                  </td>
+                </tr>
+      
+              </tbody>
+            </table>
+          <!-- </div> -->
+        </div>
+        
+      </div>
+      <div class="col-sm-4 offset-sm-4">
+        <div class="checkout">
+          <ul>
+            <!-- <li class="subtotal">
+              Subtotal<span>{{ getTotal() | currency }}</span>
+            </li> -->
+            <li class="cart-total">
+              Total <span>{{ getTotal() | currency }}</span>
+            </li>
+          </ul>
+          <a href="#!Payment"  class="proceed-btn w-100">proceed to Checkout</a>
+        </div>
+      </div>
+    </section>
+    
+
+    
+    
+    
+
+  </article>
+
+  
+  
+
+</body>
+</html>
+<script>
+
+ 
+</script>
+<!-- <script>
+    document.querySelector('.submit-email').addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    document.querySelector('.subscription').classList.add('done');
+  });
+</script> -->
+<script src="./js/cart.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>

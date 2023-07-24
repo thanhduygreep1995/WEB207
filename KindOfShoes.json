@@ -1,0 +1,138 @@
+{
+    "kindOfShoes":{
+        "KS1": [{"id": 1,"imageSRC": "./Image/ananasf/ananas13.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id": 2, "imageSRC": "./Image/ananasf/ananas13.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" : 7, "qty" : 1},
+        {"id":3,"imageSRC": "./Image/ananasf/ananas13.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":4,"imageSRC": "./Image/ananasf/ananas13.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":5,"imageSRC": "./Image/ananasf/ananas13.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":6,"imageSRC": "./Image/ananasf/ananas13.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":7,"imageSRC": "./Image/ananasf/ananas13.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":8,"imageSRC": "./Image/ananasf/ananas13.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1}],
+
+        "KS2": [{"id":9 ,"imageSRC": "./Image/ananasf/ananas15.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":10,"imageSRC": "./Image/ananasf/ananas15.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":11,"imageSRC": "./Image/ananasf/ananas15.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":12,"imageSRC": "./Image/ananasf/ananas15.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":13,"imageSRC": "./Image/ananasf/ananas15.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":14,"imageSRC": "./Image/ananasf/ananas15.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":15,"imageSRC": "./Image/ananasf/ananas15.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":16,"imageSRC": "./Image/ananasf/ananas15.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1}],
+        
+        "KS3": [{"id":"17","imageSRC": "./Image/ananasf/ananas41.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":18,"imageSRC": "./Image/ananasf/ananas10 (1).jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":19,"imageSRC": "./Image/ananasf/ananas10 (1).jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":20,"imageSRC": "./Image/ananasf/ananas10 (1).jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":21,"imageSRC": "./Image/ananasf/ananas10 (1).jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":22,"imageSRC": "./Image/ananasf/ananas10 (1).jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":23,"imageSRC": "./Image/ananasf/ananas10 (1).jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":24,"imageSRC": "./Image/ananasf/ananas10 (1).jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1}]
+    },
+    "banners": {
+        "b1": "./Image/Hi-im-Mule_1920x1050-Desktop.jpg",
+        "b2": "./Image/LowHigh_Desktop-1920x1050.jpg",
+        "b3": "./Image/Hi-im-Mule_1920x1050-Desktop.jpg",
+        "b4": "./Image/Hi-im-Mule_1920x1050-Desktop.jpg",
+        "b5": "./Image/LowHigh_Desktop-1920x1050.jpg",
+        "b6": "./Image/Hi-im-Mule_1920x1050-Desktop.jpg"
+    },
+    "about": {
+        "title":"Về chúng tôi",
+        "description":"Tên tôi là Betty. Tôi đến từ Mexico và tôi sinh ra tại Orizaba. Tôi học ở trường Montessori. Tôi thích đến trường bởi vì ở đó tôi có rất nhiều bạn bè. Mỗi khi rảnh rỗi tôi luôn luôn chơi với các bạn của mình. Sau khi tan học thì, tôi đi đến lớp tiếng Anh",
+        "imageSRC": "./Image/ananasf/ananas24.jpg"
+    },
+    "discount": {
+        "imageSRC": "./Image/ananasf/ananas24.jpg"
+    },
+    "instagram": {
+        "img1": "./Image/ananasf/ananas06.jpg",
+        "img2": "./Image/ananasf/ananas04.jpg",
+        "img3": "./Image/ananasf/ananas05.jpg"
+    },
+
+    "tips": {
+        "T1":{
+            "imageSRC":"./Image/ananasf/ananas25.jpg","title": "Card title", "description" : "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+        },
+        "T2":{
+            "imageSRC":"./Image/ananasf/ananas25.jpg","title": "Card title", "description" : "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+        },
+        "T3":{
+            "imageSRC":"./Image/ananasf/ananas25.jpg","title": "Card title", "description" : "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+        }
+    },
+
+    "hotNews": {
+        "HN1":{
+            "imageSRC":"./Image/ananasf/ananas23.jpg","title": "Card title", "description" : "Some quick example text to build on the card title and make up the bulk of the card's content."
+        },
+        "HN2":{
+            "imageSRC":"./Image/ananasf/ananas24.jpg","title": "Card title", "description" : "Some quick example text to build on the card title and make up the bulk of the card's content."
+        },
+        "HN3":{
+            "imageSRC":"./Image/ananasf/ananas31.jpg","title": "Card title", "description" : "Some quick example text to build on the card title and make up the bulk of the card's content."
+        }
+    },
+
+    "Rights":{
+        "R1" : "Bill over 500.000 vnd - freeship",
+        "R2" : "Fast Delivery",
+        "R3" : "Buy Less - Get More"
+    },
+    "Bestsellers":{
+        "BS1": [
+            {"imageSRC": "./Image/ananasf/ananas17.jpg","title":"Giày Hồng Mộng Mơ", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng"},
+            {"imageSRC": "./Image/ananasf/ananas45.jpg","title":"Giày Trắng Tinh Khôi", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng"},
+            {"imageSRC": "./Image/ananasf/ananas49.jpg","title":"Giày Xanh Màu Biển Mộng", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng"}
+        ],
+        "BS2": [
+            {"imageSRC": "./Image/ananasf/ananas18.jpg","title":"Giày Nâu Phong Trần", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng"},
+            {"imageSRC": "./Image/ananasf/ananas47.jpg","title":"Giày Xanh Chuối", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng"},
+            {"imageSRC": "./Image/ananasf/ananas43.jpg","title":"Giày Vàng Duyên Dáng", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng"}
+        ],
+        "BS3": [
+            {"imageSRC": "./Image/ananasf/ananas17.jpg","title":"Giày Hồng Mộng Mơ", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng"},
+            {"imageSRC": "./Image/ananasf/ananas45.jpg","title":"Giày Trắng Tinh Khôi", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng"},
+            {"imageSRC": "./Image/ananasf/ananas49.jpg","title":"Giày Xanh Màu Biển Mộng", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng"}
+        ]
+    },
+    "forYou":{
+        "FU1": {"imageSRC": "./Image/ananasf/ananas17.jpg",
+                "title":"Giày Hồng Mộng Mơ", 
+                "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng"
+            },
+        "FU2": {"imageSRC": "./Image/ananasf/ananas18.jpg",
+                "title":"Giày Hồng Mộng Mơ", 
+                "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng"
+        },
+        "FU3": {"imageSRC": "./Image/ananasf/ananas17.jpg",
+                "title":"Giày Hồng Mộng Mơ", 
+                "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng"  
+        }
+    },
+    "Products":[
+        {"id":1,"imageSRC": "./Image/ananasf/ananas13.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":2, "imageSRC": "./Image/ananasf/ananas13.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":3,"imageSRC": "./Image/ananasf/ananas13.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":4,"imageSRC": "./Image/ananasf/ananas13.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":5,"imageSRC": "./Image/ananasf/ananas13.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":6,"imageSRC": "./Image/ananasf/ananas13.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":7,"imageSRC": "./Image/ananasf/ananas13.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":8,"imageSRC": "./Image/ananasf/ananas13.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":9 ,"imageSRC": "./Image/ananasf/ananas15.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":10,"imageSRC": "./Image/ananasf/ananas15.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":11,"imageSRC": "./Image/ananasf/ananas15.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":12,"imageSRC": "./Image/ananasf/ananas15.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":13,"imageSRC": "./Image/ananasf/ananas15.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":14,"imageSRC": "./Image/ananasf/ananas15.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":15,"imageSRC": "./Image/ananasf/ananas15.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":16,"imageSRC": "./Image/ananasf/ananas15.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":17,"imageSRC": "./Image/ananasf/ananas41.jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":18,"imageSRC": "./Image/ananasf/ananas10 (1).jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":19,"imageSRC": "./Image/ananasf/ananas10 (1).jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":20,"imageSRC": "./Image/ananasf/ananas10 (1).jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":21,"imageSRC": "./Image/ananasf/ananas10 (1).jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":22,"imageSRC": "./Image/ananasf/ananas10 (1).jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":23,"imageSRC": "./Image/ananasf/ananas10 (1).jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1},
+        {"id":24,"imageSRC": "./Image/ananasf/ananas10 (1).jpg","title":"Giày Xanh Cá Tính", "description": "Giày Vải Canvas NE Phù Hợp cho mọi đối tượng","price" :  7, "qty" : 1}
+    ]
+}

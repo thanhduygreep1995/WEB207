@@ -1,0 +1,630 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 5 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="./css/bootstrap.min.css"> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="./js/bootstrap.bundle.min.js"></script> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" href="./css/w3school.css">
+  
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> -->
+  <link rel="stylesheet" href="./css/animate.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.compat.css"/> -->
+  <link rel="stylesheet" href="./css/animate.compat.css">
+  <script src="./js/w3school.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- <script defer src="./js/app.js"></script> -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+  <link rel="stylesheet" href="./css/buttonstyle.css">
+  <link rel="stylesheet" href="./css/cart.css">
+  <style>
+
+    body {
+      padding: 0;
+      margin: 0 auto;
+    }
+    .card-img-overlay .card-title a{
+      text-decoration: none;
+      color: rgb(246, 246, 246);
+    }
+    .card-img-overlay .card-title a:hover{
+      font-size: m medium ;
+      color: #FF5F17;
+    }
+
+    .card-img-overlay .card-text a{
+      text-decoration: none;
+      color: rgb(246, 246, 246);
+    }
+    .card-img-overlay .card-text a:hover{
+      font-size: medium ;
+      color: #FF5F17;
+    }
+    .content-footer a{
+      text-decoration: none;
+      color: white;
+    }
+    .content-footer a:hover{
+      font-size: medium ;
+      color: #FF5F17;
+    }
+    .content {
+      width: 100%;
+      height: 40px;
+      box-shadow: 2px 4px 10px rgba(0, 0, 0, .2);
+      border-radius: 60px;
+      overflow: hidden;
+    }
+
+    .subscription {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .subscription .add-email{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+      padding: 0 20px;
+    }
+
+    .subscription .submit-email {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: calc(100% - 2px);
+      width: 100px;
+      border: none;
+      border-radius: 60px;
+      outline: none;
+      margin: 1px;
+      padding: 0 20px;
+      cursor: pointer;
+      background: #808080;
+      color: #FFFFFF;
+      transition: width 0.35s ease-in-out,
+        background 0.35s ease-in-out;
+    }
+
+    .subscription.done .submit-email {
+      width: calc(100% - 2px);
+      background: #FF5F17;
+    }
+
+    .subscription .submit-email .before-submit,
+    .subscription .submit-email .after-submit {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      line-height: 38px;
+      transition: visibility .35s ease-in-out,
+        opacity .35s ease-in-out;
+    }
+
+    .subscription.done .submit-email .before-submit,
+    .subscription:not(.done) .submit-email .after-submit {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .subscription .submit-email .after-submit {
+      transition-delay: 0.35s;
+    }
+
+    .subscription:not(.done) .submit-email .before-submit,
+    .subscription.done .submit-email .after-submit {
+      visibility: visible;
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body ng-app ="myApp" >
+  <header class="container-fluid hidden" ng-controller="myCtrl">
+    <div class="row" >
+      <div class="d-flex justify-content-end text-bg-dark" ng-model="myVar" >
+        <div class="p-1"><a class="btn btn-dark" href=""><i class="fa-sharp fa-solid fa-location-dot"></i> Tìm Cửa Hàng</a></div>
+        <div class="p-1"><a class="btn btn-dark" href=""><i class="fa-sharp fa-solid fa-phone"></i> Hotline: 0979261979</a></div>
+
+        <div class="p-1" ng-show="!isLogin"><a class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#myModal" ><i class="fa-sharp fa-solid fa-user"></i> Đăng Ký</a></div>
+        <div class="p-1" ng-show="!isLogin"><a class="btn btn-dark"  href="#!Login"><i class="fa-sharp fa-solid fa-user"></i> Đăng Nhập</a></div>
+        <div class="p-1" ng-show="isLogin" ><a class="btn btn-dark" ><i class="fa-sharp fa-solid fa-user"></i> Chào mừng {{ info.name }} đến với trang web của chúng tôi!</a></div>
+        <div class="p-1"><a class="btn btn-dark" href="#!Cart"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Giỏ Hàng</a></div>
+      </div>
+    </div>
+
+
+  </header>
+  <nav class="navbar navbar-expand-sm bg-white navbar-light sticky-top">
+    <div class="container-fluid">
+
+      <a class="navbar-brand col-md-4" href="#/!" ><img value ="home" src="./Image/ananasf/logo_footer-removebg-preview.png" alt=""></a>
+
+    
+
+      <div class="collapse navbar-collapse col-md-7" id="mynavbar">
+        <ul class="navbar-nav  d-flex justify-content-between  w3-row-padding">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><b>Sản Phẩm</b></a>
+            <ul class="dropdown-menu animate__animated animate__flipInX">
+              <li><a class="dropdown-item animate__animated animate__pulse" href="#">Giày Đế Cao</a></li>
+              <li><a class="dropdown-item animate__animated animate__pulse" href="#">Giày Đế Bẹt</a></li>
+              <li><a class="dropdown-item animate__animated animate__pulse" href="#">Giày Cổ Thấp</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><b>Danh Mục Mua Hàng</b></a>
+            <ul class="dropdown-menu animate__animated animate__flipInX">
+              <li><a class="dropdown-item animate__animated animate__pulse" href="#">Nam</a></li>
+              <li><a class="dropdown-item animate__animated animate__pulse" href="#">Nữ</a></li>
+              <li><a class="dropdown-item animate__animated animate__pulse" href="#">Dòng Sản Phẩm</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><b>Sale-OFF</b></a>
+            <ul class="dropdown-menu animate__animated animate__flipInX">
+              <li><a class="dropdown-item animate__animated animate__pulse" href="#">Nam</a></li>
+              <li><a class="dropdown-item animate__animated animate__pulse" href="#">Nữ</a></li>
+              <li><a class="dropdown-item animate__animated animate__pulse" href="#">Dòng Sản Phẩm</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)"><b>Tin Tức</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)"><b>Tips</b></a>
+          </li>
+
+        </ul>
+
+        <form class="d-flex ms-auto">
+          <input class="form-control me-2" type="text" placeholder="Search">
+          <button class="btn btn-custom btn-custom-orange rounded" type="button">Search</button>
+        </form>
+
+      </div>
+
+      
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+    <!-- The Modal -->
+    <div class="modal" id="myModal" ng-controller = "myCtrl">
+      <div class="modal-dialog">
+        <div class="modal-content">
+  
+        
+          <div class="modal-header">
+            <h1 class="modal-title">Register Form</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+  
+         
+          <div class="modal-body">
+      
+              <div class="login-form border border-2 rounded-3  px-3 py-3  "  ng-app="myApp" style="background-color: #f3f3f3;">
+       
+                  <form action=""  name="myForm" ng-controller="myCtrl" >
+                      <div class="form-group mb-3">
+                          <label for="name">Name</label>
+                          <input type="text" class="form-control" name="myName" ng-model="myName"  id="name" required>
+                          
+                          <span style="color:red"  ng-show="myForm.myName.$dirty  && myForm.myName.$invalid">
+                           
+                            <span ng-show="myForm.myName.$error.required">name is required.</span>
+                  
+                          </span>
+                      </div>
+  
+                      <div class="form-group mb-3">
+                          <label for="username">Username</label>
+                          <input type="text" class="form-control" name="username" ng-model="username" id="username" required>
+  
+                          <span style="color:red" ng-show="myForm.username.$dirty && myForm.username.$invalid">
+                            <span ng-show="myForm.username.$error.required">username is required.</span>
+                            
+                          </span>
+                      </div>
+  
+                      <div class="form-group mb-3">
+                          <label for="password">Password</label>
+                          <input type="password" class="form-control" name="password" ng-model="password" id="password" required>
+                          <span style="color:red" ng-show="myForm.password.$untouched &&  myForm.password.$dirty && myForm.password.$invalid">
+                            <span ng-show="myForm.password.$error.required">password is required.</span>
+                          </span>
+                      </div>
+  
+                      <div class="form-group mb-3">
+                          <label for="email">Email</label>
+                          <input type="email" class="form-control" ng-minlength="3" name="email" ng-model="email" id="email" required>
+                          <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+                            <span ng-show="myForm.email.$error.required">Email is required.</span>
+                            <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+                          </span>
+                      </div>
+                      
+                      <div class="form-group mb-3">
+                          <label for="gender">Gender</label>
+                          <div>
+                              <div class="form-check form-check-inline">
+                                  <input type="radio" name="gender" class="form-check-input" id="male" value="male" checked>
+                                  <label for="male" class="form-check-label">Male</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                  <input type="radio" name="gender" class="form-check-input" id="female" value="female">
+                                  <label for="female" class="form-check-label">Female</label>
+                              </div>
+                          </div>
+                      </div>
+  
+                      <div class="form-group mb-3">
+                          <label for="address">Address</label>
+                          <input type="address" class="form-control" ng-minlength="3" name="address" ng-model="address" id="address" required>
+                          <span style="color:red" ng-show="myForm.address.$dirty && myForm.address.$invalid">
+                            <span ng-show="myForm.address.$error.required">address is required.</span>
+                          </span>
+                      </div>
+  
+                      <button type="submit" name="btn-login" class="btn btn-primary w-100" ng-click="register()"
+                      ng-disabled = " myForm.username.$untouched && myForm.username.$invalid ||
+                      myForm.email.$untouched && myForm.email.$invalid ||
+                      myForm.password.$untouched && myForm.password.$invalid || 
+                      myForm.myName.$untouched && myForm.myName.$invalid ||
+                      myForm.address.$untouched && myForm.address.$invalid">Register</button>
+                  </form>
+              </div>
+
+          </div>
+  
+
+  
+        </div>
+      </div>
+    </div>
+  
+  
+
+
+  
+  <article ng-controller="myCtrl" class="hidden">
+
+    <ng-view></ng-view>
+  </article>
+
+  <footer class="hidden" style="background-color: #4c4c4c;"> 
+    <section>
+      <div class="container-fluid p-5 " >
+        <div class="row ">
+          <div class="col-sm-3 col-md-3 d-flex flex-wrap align-content-center justify-content-center">
+            <!-- <div class="row"> -->
+              <img src="./Image/ananasf/Store.png" style="width: 20rem;" alt="">
+            <!-- </div> -->
+            <!-- <div class="row"> -->
+              <button type="button" class="btn btn-custom btn-custom-orange col-md-4 rounded mt-1 w-75" style="display: inline;padding: 3 5 3 5;"><Strong>Tìm Cửa Hàng</Strong></button>
+            <!-- </div> --> 
+          </div>
+          <div class="container col-sm-9 col-md-9">
+            <div class="row d-flex text-white ">
+              <!-- <div class="row"> -->
+                <!-- <div class=" "> -->
+                  <div class="content-footer col-sm-3 col-md-3 p-2" >
+                    <nav class="navbar navbar-expand-sm">
+                      <div class="container ">
+                        <div class="row">
+                            <div class="container d-flex justify-content-start  " style="margin-left: 0px;">
+                                <div class="row   d-flex align-items-center p-2" >
+                                    <div  href="javascript:void(0)" >
+                                        <h4 style="padding-right: 60px;"><strong>Sản Phẩm</strong></h4>
+                                    </div>
+                                    <button class="navbar-toggler " style="padding-left: 60px; position: absolute; top: 17px;" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar1"> 
+                                        <i class="fa-sharp fa-solid fa-chevron-down d-flex justify-content-end"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="collapse navbar-collapse "  id="mynavbar1">
+                              <ul class="navbar-nav me-auto d-flex flex-column " style="margin-left: 0px; height: 150px;">
+                                <li class="nav-item ">
+                                  <a class="nav-link" href="javascript:void(0)">Giày Nam</a>
+                                </li>
+                                <li class="nav-item ">
+                                  <a class="nav-link" href="javascript:void(0)">Giày Nữ</a>
+                                </li>
+                                <li class="nav-item ">
+                                  <a class="nav-link" href="javascript:void(0)">Thời Trang & Phụ Kiện</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="javascript:void(0)">Sale-off</a>
+                                </li>
+                              </ul>
+                            </div>
+                            
+                            
+                        </div>
+                       
+                      </div>
+                    </nav>
+                  </div>
+
+                  <div class="content-footer col-sm-3 col-md-3 p-2"  >
+                    <nav class="navbar navbar-expand-sm">
+                      <div class="container ">
+                        <div class="row">
+                            <div class="container d-flex justify-content-start  " style="margin-left: 0px;">
+                                <div class="row   d-flex align-items-center p-2">
+                                    <div  href="javascript:void(0)" >
+                                        <h4 style="padding-right: 60px;"><strong>Về Công Ty</strong></h4>
+                                    </div>
+                                    <button class="navbar-toggler " style="padding-left: 60px; position: absolute; top: 17px;" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar2">
+                                        
+                                        <i class="fa-sharp fa-solid fa-chevron-down d-flex justify-content-end"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="collapse navbar-collapse "  id="mynavbar2">
+                              <ul class="navbar-nav me-auto d-flex flex-column " style="margin-left: 0; height: 150px;">
+                                <li class="nav-item ">
+                                  <a class="nav-link" href="javascript:void(0)">Dứa Tuyển Dụng</a>
+                                </li>
+                                <li class="nav-item ">
+                                  <a class="nav-link" href="javascript:void(0)">Liên Hệ Nhượng Quyền</a>
+                                </li>
+                                <li class="nav-item ">
+                                  <a class="nav-link" href="javascript:void(0)">Về ananas</a>
+                                </li>
+                              </ul>
+                            </div>
+                            
+                            
+                        </div>
+                       
+                      </div>
+                    </nav>
+                  </div>
+
+                  <div class="content-footer col-sm-3 col-md-3 p-2">
+                    <nav class="navbar navbar-expand-sm">
+                      <div class="container ">
+                        <div class="row">
+                            <div class="container d-flex justify-content-start  " style="margin-left: 0px;">
+                                <div class="row   d-flex align-items-center p-2">
+                                    <div  href="javascript:void(0)" >
+                                        <h4 style="padding-right: 60px;"><strong>Hỗ Trợ</strong></h4>
+                                    </div>
+                                    <button class="navbar-toggler " style="padding-left: 60px; position: absolute; top: 17px;" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar3">
+                                        
+                                        <i class="fa-sharp fa-solid fa-chevron-down d-flex justify-content-end"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="collapse navbar-collapse "  id="mynavbar3">
+                              <ul class="navbar-nav me-auto d-flex flex-column " style="margin-left: 0; height: 150px;">
+                                <li class="nav-item ">
+                                  <a class="nav-link" href="javascript:void(0)">FAQs</a>
+                                </li>
+                                <li class="nav-item ">
+                                  <a class="nav-link" href="javascript:void(0)">Bảo Mật Thông Tin</a>
+                                </li>
+                                <li class="nav-item ">
+                                  <a class="nav-link" href="javascript:void(0)">Chính Sách Chung</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="javascript:void(0)">Tra Cứu Đơn Hàng</a>
+                                </li>
+                              </ul>
+                            </div>
+                            
+                            
+                        </div>
+                       
+                      </div>
+                    </nav>
+                  </div>
+
+                  <div class="content-footer col-sm-3 col-md-3 p-2" >
+                    <nav class="navbar navbar-expand-sm">
+                      <div class="container ">
+                        <div class="row">
+                            <div class="container " style="margin-left: 0;">
+                                <div class="row   d-flex align-items-center p-2">
+                                    <div  href="javascript:void(0)" >
+                                        <h4 style="padding-right: 60px;"><strong>Liên Hệ</strong></h4>
+                                    </div>
+                                    <button class="navbar-toggler " style="padding-left: 60px; position: absolute; top: 17px;" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar4">
+                                        
+                                        <i class="fa-sharp fa-solid fa-chevron-down d-flex justify-content-end"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="collapse navbar-collapse "  id="mynavbar4">
+                              <ul class="navbar-nav me-auto d-flex flex-column " style="margin-left: 0; height: 150px;">
+                                <li class="nav-item ">
+                                  <a class="nav-link" href="javascript:void(0)">Email góp ý</a>
+                                </li>
+                                <li class="nav-item ">
+                                  <a class="nav-link" href="javascript:void(0)">Hotline</a>
+                                </li>
+                                <li class="nav-item ">
+                                  <a class="nav-link" href="javascript:void(0)">0963429749</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="javascript:void(0)">Tra Cứu Đơn Hàng</a>
+                                </li>
+                              </ul>
+                            </div>
+                            
+                            
+                        </div>
+                       
+                      </div>
+                    </nav>
+                    
+                  </div>
+                <!-- </div> -->
+              <!-- </div> -->
+            </div>  
+  
+            
+            <div class="row  text-white d-flex flex-wrap">
+              <!-- <div class="container d-flex flex-wrap"> -->
+                  <div class="col-sm-3 col-md-3 px-4 py-2" >
+                    <!-- <div class="img-social " > -->
+                      <h4 ><strong>Ananas Social</strong></h4>
+                      <img src="./Image/ananasf/ananas45.png" style="width: 24%;" alt="">
+                      <img src="./Image/ananasf/ananas46.png" style="width: 24%;" alt="">
+                      <img src="./Image/ananasf/ananas47.png" style="width: 24%;" alt="">
+                    <!-- </div> -->
+                  </div>
+                  
+                  <div class="col-sm-3 col-md-3 px-4 py-2"   >
+                    <div class="emai-Request" >
+                      <div ><h4><strong>Đăng Ký Nhận Mail</strong></h4></div>
+                      
+                      <div class="content">
+                        <form class="subscription">
+                          <input class="add-email" type="email" placeholder="yourEmail@gmail.com">
+                          <button class="submit-email" type="button">
+                            <span class="before-submit">Send</span>
+                            <span class="after-submit">Cảm Ơn Đã Đăng Ký</span>
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+               
+                  <div class="col-sm-6 col-md-6 px-4 py-2" style="margin-left: 0px;" >
+                    <div class="certificat-gov ps-2" style="padding-right: 60px;">
+                    
+                      <img src="./Image/ananasf/ananas44.png" style="width: 40%;" alt="">
+                    </div>
+                  </div>
+                 
+              <!-- </div> -->
+            
+            </div>
+  
+            
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <div class="text-white text-center">
+      Copyright &COPY; 2023 Duy. All rights reserved
+    </div>  
+  </footer>
+</body>
+</html>
+<script>
+  document.querySelector('.submit-email').addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    document.querySelector('.subscription').classList.add('done');
+  });
+</script>
+<script>
+  function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-opacity-off";
+}
+</script>
+<script>
+// var app = angular.module('myApp', ['ngRoute']);
+// app.config(function($routeProvider) {
+//     $routeProvider.when("/", {
+//         templateUrl : "./main.html",
+//     })
+//     .when("/Login", {
+//         templateUrl : "./Lab3_Login.html",
+//     }).when("/Cart", {
+//         templateUrl : "./Lab3_cart.html",
+//     }).when("/Payment", {
+//           templateUrl : "./Lab3_payment.html",
+//     })
+//   });
+
+
+// app.controller("myCtrl", function ($scope, $http){
+
+//   $http.get("./KindOfShoes.json").then(function(response) {
+
+//     $scope.kindOfShoes = response.data.kindOfShoes;
+//     $scope.inventory = $scope.kindOfShoes;
+//     $scope.banners = response.data.banners;
+//     $scope.banners.b1 = response.data.banners.b1;
+//     $scope.banners.b2 = response.data.banners.b2;
+//     $scope.banners.b3 = response.data.banners.b3;
+//     $scope.about = response.data.about;
+//     $scope.discount = response.data.discount;
+//     $scope.discount.imageSRC = response.data.discount.imageSRC;
+//     $scope.instagram = response.data.instagram;
+//     $scope.tips = response.data.tips;
+//     $scope.hotNews = response.data.hotNews;
+//     $scope.Rights = response.data.Rights;
+//     $scope.Bestsellers = response.data.Bestsellers;
+//     $scope.forYou = response.data.forYou;
+//   });
+
+  
+  
+//     this.tab = 1;
+  
+//     this.selectTab = function (setTab){
+//       this.tab = setTab;
+//     };
+//     this.isSelected = function(checkTab) {
+//       return this.tab === checkTab;
+//     };
+
+
+//   });
+
+  
+</script>
+<script src="./js/app.js"></script>
+<script src="./js/cart.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
